@@ -17,3 +17,10 @@ Este repos incluye la documentación y los ejercicios para seguir el curso de Vu
 
 
 ## ENLACES DE INTERÉS:
+1. [VUE](https://vuejs.org/guide/introduction.html).
+2. [VITE](https://vitejs.dev/guide/).
+3. [PINIA](https://pinia.vuejs.org/introduction.html).
+4. [VUE-ROUTER](https://v3.router.vuejs.org/guide/).
+5. [VUE-DEVTOOLS](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=es).
+6. [VUE-CHALLENGES](https://vuejs-challenges.netlify.app/getting-started.html)
+7. [PLAYGOUND SINGLE FILE COMPONENTS](https://sfc.vuejs.org)
