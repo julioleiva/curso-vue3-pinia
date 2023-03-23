@@ -1,4 +1,11 @@
-# curso-vue3-pinia## MATERIAL CURSO VUE 3 CON COMPOSITION API, PINIA Y VUE-ROUTER
+# Instalaciones previas e instrucciones:
+
+## INSTALACIONES NECESARIAS
+Para la realización de este curso será necesario:
+1. Versión reciente de Node (18+)
+2. Editor de código (VsCode, p.e.)
+3. Navegador actualizado (Chrome, Edge, Firefox, Safari...) y Vue.js devtools.
+
 
 ## INSTRUCCIONES
 1. En primer lugar, crea un nuevo proyecto Vite utilizando la plantilla Vue 3:
