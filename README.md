@@ -1,3 +1,8 @@
+## ORGANIZACIÓN REPO
+
+1. Rama master: Documetación
+2. Rama feature/exercise: [Documetación y código ejercicio 1](https://github.com/julioleiva/curso-vue3-pinia/tree/feature/exercise)
+
 ## INSTALACIONES NECESARIAS
 
 Para la realización de este curso será necesario:
