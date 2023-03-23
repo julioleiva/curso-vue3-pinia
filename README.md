@@ -11,6 +11,24 @@ npm install
 npm install vue-router@4 pinia@next axios
 ```
 ---
+Crea la siguiente estructura de proyecto, que vamos a ir implmentando en los siguientes pasos:
+
+```md
+src/
+ ├── components/
+ │   ├── Navbar.vue
+ ├── pinia/
+ │   ├── store.js
+ ├── views/
+ │   ├── Home.vue
+ │   ├── SavedContacts.vue
+ ├── App.vue
+ ├── main.js
+ ├── index.html
+ ├── router.js
+ ├── router.js
+ ```
+---
 3. Crea el archivo **main.js** en el directorio src y configura Vue, Vue Router y Pinia:
 
 ```js
@@ -37,7 +55,6 @@ app.mount('#app')
 ---
 4.  Crea un archivo **routes.js** en el directorio src:
 ```js
-// src/routes.js
 import Home from './views/Home.vue'
 import SavedContacts from './views/SavedContacts.vue'
 
@@ -49,7 +66,6 @@ const routes = [
 ---
 5. Create a Pinia store in the src directory:
 ```js
-// src/store.js
 import { defineStore } from 'pinia'
 
 export const useContactsStore = defineStore({
@@ -297,7 +313,6 @@ import Navbar from './components/Navbar.vue'
 
 9. Create annd Add the following code to the Navbar.vue file:
 ```js
-<!-- src/components/Navbar.vue -->
 <template>
     <nav class="navbar">
       <router-link to="/" class="nav-link">Home</router-link>
