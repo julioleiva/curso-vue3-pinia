@@ -183,7 +183,7 @@ Será equivalente a:
 <BlogPost :id="post.id" :title="post.title" />
 ```
 
-**Flujo de datos unidireccional
+** Flujo de datos unidireccional
 
 Todos los props forman una vinculación unidireccional descendente entre la propiedad secundaria y la principal: cuando se actualiza la propiedad principal, se transmitirá a la secundaria, pero no al revés. Esto evita que los componentes secundarios muten accidentalmente el estado del principal, lo que puede hacer que el flujo de datos de su aplicación sea más difícil de entender.
 
