@@ -34,4 +34,3 @@ Este repos incluye la documentación y los ejercicios para seguir el curso de Vu
 10. [VUE DOSE WEB SITE](https://vuedose.tips/articles)
 11. [VUE MASTERY BLOG](https://www.vuemastery.com/blog)
 12. [ESCUELA VUE](https://escuelavue.es/)
-13. 
