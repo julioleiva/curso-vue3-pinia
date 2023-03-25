@@ -29,3 +29,4 @@ Este repos incluye la documentación y los ejercicios para seguir el curso de Vu
 5. [VUE-DEVTOOLS](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=es).
 6. [VUE-CHALLENGES](https://vuejs-challenges.netlify.app/getting-started.html)
 7. [PLAYGOUND SINGLE FILE COMPONENTS](https://sfc.vuejs.org)
+8. [VUE USE](https://vueuse.org/guide/)
