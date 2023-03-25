@@ -62,12 +62,6 @@ Dentro de la sección ```<script setup>```, se pueden definir las variables reac
 
 En este ejemplo, se importa la función ref de Vue y se utiliza para definir la variable count como una variable reactiva con valor inicial 0. Luego, se define la función increment que incrementa el valor de count. Además, se utilizan los hooks de Vue onMounted y watchEffect para imprimir mensajes en la consola cuando el componente se monta y cuando count cambia de valor.
 
-## Sitios de interés
-
-### [Documentación Oficial](https://vuejs.org/guide/introduction.html)
-### [Playgound SFC](https://sfc.vuejs.org/)
-### [Vue DevTools](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd?hl=es) 
-
 ## Explicación básica de la diferencia entre Composition API y Options API(Seguiremos incidiendo en esto)
 
 Vue.js es un framework de JavaScript que ofrece varias opciones para la definición de componentes. En particular, existen dos formas principales de definir componentes en Vue: mediante la Options API y mediante la Composition API con script setup.
