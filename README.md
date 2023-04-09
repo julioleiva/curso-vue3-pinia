@@ -26,7 +26,6 @@ src/
  ├── main.js
  ├── index.html
  ├── router.js
- ├── router.js
  ```
 ---
 3. Crea el archivo **main.js** en el directorio src y configura Vue, Vue Router y Pinia:
@@ -64,7 +63,7 @@ const routes = [
 ]
 ```
 ---
-5. Crea un archivo **store.js** en el directorio src:
+5. Crea un archivo **store.js** en el directorio src/pinia:
 ```js
 import { defineStore } from 'pinia'
 
