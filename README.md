@@ -64,7 +64,7 @@ const routes = [
 ]
 ```
 ---
-5. Create a Pinia store in the src directory:
+5. Crea un archivo **store.js** en el directorio src:
 ```js
 import { defineStore } from 'pinia'
 
@@ -98,7 +98,7 @@ export const useContactsStore = defineStore({
 ````
 
 ---
-6. Create a Home.vue component in the src/views directory:
+6. Cree un componente Home.vue en el directorio src/views:
 ```js
 <template>
   <div class="container">
@@ -221,7 +221,7 @@ button:hover {
 ```
 ---
 
-7. Create a SavedContacts.vue component in the `src/views` directory:
+7. Crea un componente SavedContacts.vue en el directorio `src/views`:
 ```js
 <template>
   <div>
@@ -295,7 +295,7 @@ button:hover {
 </style>
 ```
 ---
-8. Update the App.vue file in the src directory:
+8. Actualice el archivo App.vue en el directorio src:
 ```js
 <template>
   <div id="app">
@@ -311,7 +311,7 @@ import Navbar from './components/Navbar.vue'
 ```
 ---
 
-9. Create annd Add the following code to the Navbar.vue file:
+9. Crea y añade el siguiente código al archivo Navbar.vue:
 ```js
 <template>
     <nav class="navbar">
