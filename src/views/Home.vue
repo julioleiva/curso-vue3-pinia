@@ -1,36 +1,38 @@
 <template>
   <div class="container">
-    <input
-      type="text"
-      v-model="searchQuery"
-      @input="updateSearchQuery"
-      placeholder="Search contacts..."
-    />
+    <input type="text" v-model="searchQuery" @input="updateSearchQuery" placeholder="Search contacts..." />
     <ul>
-      <li v-for="(contact, index) in filteredContacts" :key="contact.login.uuid" :class="{ saved: isContactSaved(contact) }">
+      <li v-for="(contact, index) in filteredContacts" :key="contact.login.uuid"
+        :class="{ saved: isContactSaved(contact) }">
         <img :src="contact.picture.thumbnail" />
         {{ contact.name.first }} {{ contact.name.last }}
         <button @click="addContact(contact)">Save Contact</button>
       </li>
     </ul>
+    <div id="load-more" ref="loadMoreRef"></div>
+    <div v-if="store.loading">Loading...</div>
   </div>
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
-import { useContactsStore } from '../pinia/store'
-import axios from 'axios'
+import { computed, ref, watch, onMounted } from 'vue'
+import { useContactsStore } from '../store/contacts'
 
+// ---Contacts section---
+//instancia del almacenamiento de contactos (Pinia)
 const store = useContactsStore()
-const searchQuery = ref('')
 
-const fetchContacts = async () => {
-  const response = await axios.get('https://randomuser.me/api/?results=500')
-  store.setContacts(response.data.results)
+const addContact = (contact) => {
+  store.saveContact(contact)
 }
 
-fetchContacts()
+const isContactSaved = (contact) => {
+  return store.savedContacts.some(
+    (savedContact) => savedContact.login.uuid === contact.login.uuid
+  )
+}
 
+// propiedad computada que devuelve los contactos filtrados según la consulta de búsqueda
 const filteredContacts = computed(() => {
   if (searchQuery.value === '') return store.contacts
   return store.contacts.filter((contact) =>
@@ -40,29 +42,46 @@ const filteredContacts = computed(() => {
   )
 })
 
-const isContactSaved = (contact) => {
-  return store.savedContacts.some(
-    (savedContact) => savedContact.login.uuid === contact.login.uuid
-  )
+//---Query section---
+//almacena la consulta de búsqueda del usuario
+const searchQuery = ref('')
+const updateSearchQuery = () => {
+  store.setSearchQuery(searchQuery.value)
 }
 
-const isContactSavedComputed = computed(() => {
-  return (contact) => isContactSaved(contact)
+// Load more section (Intersection Observer)
+
+// Para cargar más contactos al hacer scroll, se usa el Intersection Observer
+// https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API
+
+// ref que apunta al elemento HTML utilizado para detectar si se ha llegado al final de la lista
+const loadMoreRef = ref(null)
+
+// instancia del Intersection Observer que detecta si se ha llegado al final de la lista y carga más contactos
+const observer = new IntersectionObserver(async (entries) => {
+  if (entries[0].isIntersecting) {
+    await store.loadMoreContacts()
+  }
+}, {})
+
+// hook que se ejecuta después de montar el componente. Se utiliza para iniciar la observación del elemento loadMoreRef.
+onMounted(() => {
+  if (loadMoreRef.value) {
+    observer.observe(loadMoreRef.value)
+  }
 })
 
-const updateSearchQuery = () => {
-store.setSearchQuery(searchQuery.value)
-}
+//  observa los cambios en loadMoreRef y actualiza la observación del elemento.
+watch(loadMoreRef, (newValue) => {
+  if (newValue) {
+    observer.observe(newValue)
+  }
+})
 
-const deleteContact = (index) => {
-store.removeContact(index)
-}
 
-const addContact = (contact) => {
-store.saveContact(contact)
-}
 </script>
 
+<!-- Define los estilos CSS para el componente. Los estilos están limitados (scoped) al componente y no afectan a otros componentes en la aplicación. -->
 <style scoped>
 .container {
   max-width: 800px;
@@ -90,6 +109,7 @@ li {
   padding: 0.5rem 0;
   border-bottom: 1px solid #eee;
 }
+
 li.saved {
   background-color: rgba(46, 204, 113, 0.1);
 }

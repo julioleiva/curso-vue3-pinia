@@ -12,7 +12,7 @@
 </template>
 
 <script setup>
-import { useContactsStore } from '../pinia/store'
+import { useContactsStore } from '../store/contacts'
 
 const store = useContactsStore()
 const savedContacts = store.savedContacts
