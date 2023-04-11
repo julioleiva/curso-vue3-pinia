@@ -7,7 +7,6 @@ En este caso, loadMoreRef es el valor que se está observando. loadMoreRef es un
 La función que se ejecuta cuando loadMoreRef cambia se define como:
 
 ```javascript
-Copy code
 (newValue) => {
   if (newValue) {
     observer.observe(newValue)
@@ -33,9 +32,3 @@ onMounted(...): Este hook de ciclo de vida de Vue se ejecuta después de montar 
 watch(loadMoreRef, ...): Se utiliza la función watch de Vue para observar los cambios en loadMoreRef. Cuando loadMoreRef cambia, se ejecuta la función de devolución de llamada (callback) que recibe el nuevo valor en el parámetro newValue. Si newValue tiene un valor verdadero, se llama a la función observe del objeto observer, pasándole newValue como argumento. Esto actualiza la observación del elemento HTML apuntado por loadMoreRef.
 
 En resumen, este código crea un Intersection Observer que detecta cuando se llega al final de la lista de contactos y carga más contactos si es necesario. Además, utiliza el hook onMounted y la función watch para iniciar y actualizar la observación del elemento HTML utilizado para la detección.
-
-
-
-
-
-Regenerate response
