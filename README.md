@@ -41,7 +41,7 @@ El propósito de este código es actualizar la observación del Intersection Obs
 
 
 
-##  Intersection Observer:
+##  Intersection Observer (scroll infinito, explicación de la funcionalidad)
 Creamos un Intersection Observer para detectar si se ha llegado al final de la lista de contactos y cargar más contactos en consecuencia. Vamos a analizar cada parte del código:
 
 const loadMoreRef = ref(null): Se crea una referencia loadMoreRef e inicialmente se le asigna null. Esta referencia se utilizará para apuntar al elemento HTML que se emplea para detectar si se ha llegado al final de la lista.
