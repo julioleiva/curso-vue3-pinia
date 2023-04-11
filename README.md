@@ -19,6 +19,7 @@ Este repos incluye la documentación y los ejercicios para seguir el curso de Vu
 1. [Documentación Vue Fundamental](https://github.com/julioleiva/curso-vue3-pinia/blob/master/BASES.md)
 2. [Documetación Vue Componentes](https://github.com/julioleiva/curso-vue3-pinia/blob/master/COMPONENTES.md)
 4. [Documetación y código ejercicio 1](https://github.com/julioleiva/curso-vue3-pinia/tree/feature/exercise)
+5. [Documetación y código ejercicio 2](https://github.com/julioleiva/curso-vue3-pinia/tree/feature/optimization)
 
 
 ## ENLACES DE INTERÉS:
