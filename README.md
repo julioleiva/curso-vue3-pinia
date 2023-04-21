@@ -2,6 +2,7 @@
 
 1. Rama master: Documetación
 2. Rama feature/exercise: [Documetación y código ejercicio 1](https://github.com/julioleiva/curso-vue3-pinia/tree/feature/exercise)
+3. Rama feature/optimization [Documetación y código ejercicio 1](https://github.com/julioleiva/curso-vue3-pinia/tree/feature/optimization)
 
 ## INSTALACIONES NECESARIAS
 
