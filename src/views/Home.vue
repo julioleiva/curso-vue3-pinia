@@ -1,22 +1,49 @@
 <template>
   <div class="container">
-    <input type="text" v-model="searchQuery" @input="updateSearchQuery" placeholder="Search contacts..." />
+
+    <button @click="showModal = true">Open Modal</button>
+
+    <teleport to="body">
+      <Modal v-if="showModal" @close="showModal = false">
+        <template #header>
+          <h2>Custom header</h2>
+        </template>
+        <p>Modal content goes here</p>
+        <template #footer>
+          <button @click="showModal = false">Close</button>
+        </template>
+      </Modal>
+    </teleport>
+
+
+    <!-- Componente reutilizable -->
+    <SearchInput
+      :searchQuery="searchQuery"
+      @update-search-query="updateSearchQuery"
+      placeholder="Search contacts..."
+    />
+
     <ul>
-      <li v-for="(contact, index) in filteredContacts" :key="contact.login.uuid"
+      <li v-for="(contact) in filteredContacts" :key="contact.login.uuid"
         :class="{ saved: isContactSaved(contact) }">
         <img :src="contact.picture.thumbnail" />
         {{ contact.name.first }} {{ contact.name.last }}
         <button @click="addContact(contact)">Save Contact</button>
       </li>
     </ul>
-    <div id="load-more" ref="loadMoreRef"></div>
+    <div id="load-more" ref="loadMoreRef"></div>  
     <div v-if="store.loading">Loading...</div>
   </div>
 </template>
 
 <script setup>
 import { computed, ref, watch, onMounted } from 'vue'
+import SearchInput from '../components/SearchInput.vue'
 import { useContactsStore } from '../store/contacts'
+import Modal from '../components/Modal.vue'
+
+// ---Modal section---
+const showModal = ref(false)
 
 // ---Contacts section---
 //instancia del almacenamiento de contactos (Pinia)
@@ -45,7 +72,8 @@ const filteredContacts = computed(() => {
 //---Query section---
 //almacena la consulta de búsqueda del usuario
 const searchQuery = ref('')
-const updateSearchQuery = () => {
+const updateSearchQuery = (newValue) => {
+  searchQuery.value = newValue
   store.setSearchQuery(searchQuery.value)
 }
 
