@@ -1,13 +1,13 @@
 <template>
   <div>
     <h1>Saved Contacts</h1>
-    <ul>
+    <TransitionGroup name="contactList" tag="ul">
       <li v-for="(contact, index) in savedContacts" :key="contact.login.uuid">
         <img :src="contact.picture.thumbnail" />
         {{ contact.name.first }} {{ contact.name.last }}
         <button @click="removeSavedContact(index)">Remove</button>
       </li>
-    </ul>
+    </TransitionGroup>
   </div>
 </template>
 
@@ -67,5 +67,17 @@ button {
 button:hover {
   background-color: #c0392b;
 }
+
+/* Transitions y animaciones */
+.contactList-enter-active,
+.contactList-leave-active {
+  transition: all 0.5s ease;
+}
+.contactList-enter-from,
+.contactList-leave-to {
+  opacity: 0;
+  transform: translateX(30px);
+}
+
 </style>
 
