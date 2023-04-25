@@ -3,6 +3,7 @@
 
     <button @click="showModal = true">Open Modal</button>
 
+     <!-- Componente Telepor -->
     <teleport to="body">
       <Modal v-if="showModal" @close="showModal = false">
         <template #header>
