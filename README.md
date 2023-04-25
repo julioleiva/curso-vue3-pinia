@@ -2,7 +2,8 @@
 
 1. Rama master: Documetación
 2. Rama feature/exercise: [Documetación y código ejercicio 1](https://github.com/julioleiva/curso-vue3-pinia/tree/feature/exercise)
-3. Rama feature/optimization [Documetación y código ejercicio 1](https://github.com/julioleiva/curso-vue3-pinia/tree/feature/optimization)
+3. Rama feature/optimization [Documetación y código ejercicio 2](https://github.com/julioleiva/curso-vue3-pinia/tree/feature/optimization)
+4. Rama feature/components_teleport_animations [Documetación y código ejercicio 3](https://github.com/julioleiva/curso-vue3-pinia/tree/feature/components_teleport_animations)
 
 ## INSTALACIONES NECESARIAS
 
@@ -21,6 +22,7 @@ Este repos incluye la documentación y los ejercicios para seguir el curso de Vu
 2. [Documetación Vue Componentes](https://github.com/julioleiva/curso-vue3-pinia/blob/master/COMPONENTES.md)
 4. [Documetación y código ejercicio 1](https://github.com/julioleiva/curso-vue3-pinia/tree/feature/exercise)
 5. [Documetación y código ejercicio 2](https://github.com/julioleiva/curso-vue3-pinia/tree/feature/optimization)
+6. [Documetación y código ejercicio 3](https://github.com/julioleiva/curso-vue3-pinia/tree/feature/components_teleport_animations)
 
 
 ## ENLACES DE INTERÉS:
